@@ -39,10 +39,11 @@ function getCountryByCode() {
         for(var country of countries) {
             if(setCode == country.alpha3Code) {
                 return country;
+            } else {
+                return false;
             }
         }
     } else {
         alert('Неверный ввод');
-        return false;
     }
 }
