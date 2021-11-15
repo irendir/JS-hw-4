@@ -10,12 +10,12 @@ function getAvaragePopulation() {
     return getPopulation;
 }
 
-var setCountryName = [];
 function getNames() {
     //вернуть список (массив) имен стран (поле name)
+    var сountryNames = [];
     for(var country of countries) {
         var countryName = country.name;
-        setCountryName.push(countryName);
+        сountryNames.push(countryName);
     }
 }
 
@@ -33,16 +33,15 @@ function getCountryByCode() {
     //пользователь вводит через prompt трехбуквенный код. если введенная строка не 3 символа длиной - выдать сообщение о неправильном вводе.
     //по введенной строке (трехбуквенный код) найти страну (должно совпадать с alpha3Code, которое есть у каждой страны).
     //и вернуть из функции либо объект с найденной страной, либо false
-    var setCode = prompt('Введите код');
-    var setCodeSplit = setCode.split('');
-    if(setCodeSplit.length == 3) {
+    var inputCode = prompt('Введите код');
+    var inputCodeSplit = inputCode.split('');
+    if(inputCodeSplit.length == 3) {
         for(var country of countries) {
-            if(setCode == country.alpha3Code) {
+            if(inputCode == country.alpha3Code) {
                 return country;
-            } else {
-                return false;
             }
         }
+        return false;
     } else {
         alert('Неверный ввод');
     }
